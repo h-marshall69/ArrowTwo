@@ -46,9 +46,9 @@ public class Player : MonoBehaviour
             Vector3 mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
             Vector3 aimDirection = (mousePosition - transform.position).normalized;
             mousePosition.z = 0.0f;
-            mousePosition.Normalize();
 
-            crossHair.transform.localPosition = aimDirection * 4.0f;
+            crossHair.transform.localPosition = aimDirection * 6.0f;
+            //crossHair.transform.localPosition = Vector3.MoveTowards(transform.position, mousePosition, Time.deltaTime);
 
             playerAnimatorTop.SetFloat("AimHorizontal", aimDirection.x);
             playerAnimatorTop.SetFloat("AimVertical", aimDirection.y);
@@ -62,12 +62,10 @@ public class Player : MonoBehaviour
 
         if(Input.GetMouseButtonUp(0)) {
             Vector3 mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-            Vector3 aimDirection = (mousePosition - transform.position);
-            mousePosition.z = 0.0f;
-            mousePosition.Normalize();
+            Vector3 aimDirection = (mousePosition - transform.position).normalized;
 
             GameObject arrow = Instantiate(arrowPrefab, transform.position, Quaternion.identity);
-            arrow.GetComponent<Rigidbody2D>().velocity = aimDirection * 3.0f;
+            arrow.GetComponent<Rigidbody2D>().velocity = aimDirection * 10.0f;
             arrow.transform.Rotate(0.0f, 0.0f, Mathf.Atan2(aimDirection.y, aimDirection.x) * Mathf.Rad2Deg);
             Destroy(arrow, 2.0f);
             crossHair.SetActive(false);

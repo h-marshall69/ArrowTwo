@@ -133,6 +133,7 @@ GameObject:
   m_Component:
   - component: {fileID: 56649726}
   - component: {fileID: 56649725}
+  - component: {fileID: 56649727}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -147,7 +148,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 56649724}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 1b993e7c60ad31a41bfe1c53ebbf2e37, type: 3}
   m_Name: 
@@ -174,6 +175,23 @@ Transform:
   - {fileID: 1824188263}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &56649727
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 56649724}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a1525993cb7065f448c0476282dcea89, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerId: 12
+  topAnimator: {fileID: 1831784387}
+  bottonAnimator: {fileID: 2087994029}
+  crossHair: {fileID: 1824188262}
+  arrowPrefab: {fileID: 2515588107270844167, guid: 5e780fd7740d29a4784929b70822f0fb, type: 3}
 --- !u!1 &64258387 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 4540632469161571548, guid: f804f11d45cfdcd45b7c47c114c2cca3, type: 3}
