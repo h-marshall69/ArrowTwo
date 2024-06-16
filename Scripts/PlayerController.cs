@@ -7,10 +7,12 @@ using UnityEngine.XR;
 public class PlayerController : MonoBehaviour
 {
     public int playerId = 0;
+    private Player player;
     [SerializeField] private Animator topAnimator;
     [SerializeField] private Animator bottonAnimator;
-
     public GameObject crossHair;
+
+    public Rigidbody2D rb;
     public GameObject arrowPrefab;
 
     Vector3 movement;
@@ -26,6 +28,7 @@ public class PlayerController : MonoBehaviour
     }
 
     void Awake() {
+        //player = ReInput.player.GetPlayer(PlayerId);
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
     }
@@ -55,7 +58,8 @@ public class PlayerController : MonoBehaviour
     }
 
     private void Move() {
-        transform.position = transform.position + movement * Time.deltaTime;
+        //transform.position = transform.position + movement * Time.deltaTime;
+        rb.velocity = new Vector2(movement.x, movement.y);
     }
 
     private void Animate() {
