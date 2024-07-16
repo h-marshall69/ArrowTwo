@@ -20,6 +20,7 @@ public class ArcherDos : MonoBehaviour
     public float AIMING_BASE_PENALTY = 1.0f;
     public float SHOOTING_RECOIL_TIME = 1.0f;
     public float CROSSHAIR_DISTANCE =  1.0f;
+    public bool lockPosition;
     
 
     [Space]
@@ -68,7 +69,10 @@ public class ArcherDos : MonoBehaviour
 
         endOfAiming = Input.GetButtonUp("Fire1");
         isAiming = Input.GetButton("Fire1");
-        if(isAiming) {
+        lockPosition = Input.GetButton("LockPosition");
+
+
+        if(isAiming || shootingRecoil > 0.0f) {
             movementSpeed *= AIMING_BASE_PENALTY;
         }
 
